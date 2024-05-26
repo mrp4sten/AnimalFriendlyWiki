@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   entry: ['./src/app.ts'],
@@ -16,6 +17,10 @@ module.exports = {
         { from: "./public/css", to: "css" },
         { from: "./public/js", to: "js" },
       ],
+    }),
+    new Dotenv({
+      path: './.env', // Path to .env file (this is the default)
+      safe: false, // load .env.example (defaults to "false" which does not use dotenv-safe)
     })
   ],
   module: {
