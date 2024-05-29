@@ -8,9 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mauricio Pasten (mrp4sten)",
   "license": "ISC",
-  "description": "",
+  "description": "Simple client API to read the family friendly cats and  protectiveness dogs",
   "devDependencies": {
     "copy-webpack-plugin": "^12.0.2",
     "html-webpack-plugin": "^5.6.0",
