@@ -1,10 +1,11 @@
+import { Cat } from "../models/Cats";
 import { AnimalType } from "../models/EAnimalType";
 
 export class Animals {
   private static baseUrl: string = process.env.API_URL ?? "";
   private static apiKey: string = process.env.API_KEY ?? "";
 
-  static async getAnimals(type: AnimalType.CAT | AnimalType.DOG) {
+  static async getAnimals(type: AnimalType.CAT | AnimalType.DOG): Promise<Array<Cat> | undefined> {
     const params = new URLSearchParams();
     if (type === AnimalType.CAT) {
       params.append('family_friendly', '5');
@@ -23,11 +24,7 @@ export class Animals {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const data = await response.json();
-
-      console.log('response :>> ', data);
-
-      return data;
+      return await response.json();
     } catch (error) {
       console.error(error);
     }
