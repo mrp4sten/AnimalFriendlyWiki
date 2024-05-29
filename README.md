@@ -17,6 +17,19 @@ cd animalswiki
 npm install
 ```
 
+## Configuration
+
+This project uses environment variables for configuration. These are stored in a `.env` file. You'll need to create your own `.env` file in the root of the project directory.
+
+Here's an example `.env` file:
+
+```shell
+API_URL=https://api.api-ninjas.com/v1
+API_KEY=Your_API_Key
+```
+
+Replace `Your_API_Key` with your actual API key from api-ninjas.com.
+
 ## Usage
 
 To build the project run:
